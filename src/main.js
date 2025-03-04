@@ -5,8 +5,6 @@ import App from "./App.vue";
 import router from "./router";
 import GStore from "./stores";
 import "@/services/AxiosInterceptorSetup.js";
-import VueDatePicker from '@vuepic/vue-datepicker';
-import '@vuepic/vue-datepicker/dist/main.css'
 import Popper from "vue3-popper";
 import ToastNotification from './components/ToastNotification.vue';
 import '@fortawesome/fontawesome-free/css/all.css';
@@ -21,7 +19,6 @@ app.use(createPinia());
 app.use(router);
 app.use(GStore);
 app.mount("#app");
-app.component('VueDatePicker', VueDatePicker);
 app.component("Popper", Popper);
 app.component('ToastNotification', ToastNotification);
 

@@ -108,6 +108,7 @@
     <!-- Success Modal End -->
   </div>
 </template>
+
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
@@ -142,41 +143,18 @@ const login = async (values) => {
     // Log the entire response for debugging
     console.log('API response:', response);
 
-    const userData = response.data?.User;
-    const token = response.data?.User?.token;
+    const token = response.data;
 
-    // Ensure userData and token are defined
-    if (!userData || !token) {
-      throw new Error('User data or token is undefined');
+    // Ensure token is defined
+    if (!token) {
+      throw new Error('Token is undefined');
     }
 
-    // Ensure the role property is set
-    if (!userData.role || !Array.isArray(userData.role) || userData.role.length === 0) {
-      userData.role = 'user'; // Set a default role if it's missing
-    } else {
-      // Extract the role name from the first role object
-      userData.role = userData.role[0].name;
-    }
-
-    // Set the token and user in localStorage
+    // Set the token in localStorage
     localStorage.setItem("token", token);
-    localStorage.setItem("user", JSON.stringify(userData));
-    // set login expiration
-    setLoginExpiration();
 
     // Set the user and role in Vuex store
-    store.commit('setUser', userData);
     store.commit('setJwtToken', token);
-
-
-
-    // Check if the role property exists in userData
-    if (userData && userData.role) {
-      store.commit('setRole', userData.role);
-    } else {
-      // Set a default role if the role property is missing or undefined
-      store.commit('setRole', 'user');
-    }
 
     // Show the success modal
     showSuccessModal.value = true;
@@ -191,8 +169,7 @@ const login = async (values) => {
     } else {
       // Display a generic error message
       message.value =
-        "We're experiencing technical difficulties connecting to the backend server. Please try again in a few minutes or contact support if the issue continues."
-;
+        "We're experiencing technical difficulties connecting to the backend server. Please try again in a few minutes or contact support if the issue continues.";
     }
 
     // Handle specific error messages based on backend responses
@@ -206,12 +183,6 @@ const login = async (values) => {
     isSubmitting.value = false;
   }
 };
-// login expireation function
-const setLoginExpiration = () => {
-  const expirationTime = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 hours from now
-  localStorage.setItem('loginExpiration', expirationTime);
-};
-
 
 const redirectToHome = () => {
   showSuccessModal.value = false;
@@ -222,6 +193,7 @@ const togglePasswordVisibility = () => {
   passwordVisible.value = !passwordVisible.value;
 };
 </script>
+
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Poppins:600&display=swap');

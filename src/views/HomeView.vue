@@ -3,10 +3,8 @@
 <div id="home"  class="p-[20px] h-full overflow-auto rounded-lg">
   <div class="flex flex-col h-full">
     <h1 class="text-4xl text-center text-white sm:text-center">
-      <strong>Welcome to Home</strong>
+      <strong>Welcome to {{ username }} </strong>
     </h1>
-    <p class="text-2xl text-white">Username: {{ username }}</p>
-    <p class="text-white">Role: {{ role }}</p>
 
 
     <div id="clock" class="p-10">
