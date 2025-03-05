@@ -24,15 +24,15 @@ export default {
     themes: [
       {
         mytheme: {
-          "primary": "#0fae84",
-          "text": "#34495E",
-          "accent": "#f3f4f6",
-          "bg": "#f5f5f4",
-          "base": "#f3f4f6",
-          "info": "#0000ff",
-          "success": "#00ff00",
-          "warning": "#fcd34d",
-          "error": "#e11d48",
+          "primary": "#f50057",      // Sorx Red for primary actions
+          "text": "#3f3d56",         // Attorney for text
+          "accent": "#fe6484",       // Brink Pink for accents
+          "bg": "#fefeff",           // White for background
+          "base": "#fefeff",         // White for base elements
+          "info": "#3f3d56",         // Attorney for informational elements
+          "success": "#f50057",      // Sorx Red for success states
+          "warning": "#fe6484",      // Brink Pink for warnings
+          "error": "#f50057",        // Sorx Red for errors
         },
       },
     ],

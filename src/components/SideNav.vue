@@ -1,7 +1,7 @@
 <template>
   <div class="flex w-screen h-screen">
     <!-- Side bar -->
-    <div class="w-[400px] h-full bg-gray-200 text-text" v-show="showSide">
+    <div class="w-[400px] h-full bg-bg text-text" v-show="showSide">
       <div class="h-[50px] bg-primary flex justify-start items-center">
         <div class="px-[20px]">
           <router-link to="/home" class="text-xl font-bold">
