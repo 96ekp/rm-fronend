@@ -27,6 +27,32 @@
             </div>
             <!-- end home-->
 
+                 <!-- start menu -->
+                 <!-- <div :class="{ 'hidden': !showSide }" class="sidebar">
+              <router-link to="/menu" @click="handleNavClick" class="inline-flex relative items-center py-[10px] px-[10px] w-full lg:text-md md:text-base sm:text-xs font-medium rounded-md border-gray-200 hover:bg-gray-200 hover:text-gray-800 transition duration-400 ease-in-out" exact-active-class="active-link">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round
+                  stroke-linejoin="round"
+                  class="w-6 h-6"
+                  >
+                  <g id="dish">
+                  <path d="M15 8h2c0.6 0 1-0.4 1-1s-0.4-1-1-1h-2c-0.6 0-1 0.4-1 1s0.4 1 1 1z"/>
+                  <path d="M29.9 20.5c-0.2-0.3-0.6-0.5-0.9-0.5h-1.1c-0.5-4.4-4.1-8.8-8.7-10.2-2.1-0.7-4.4-0.7-6.5 0-4.5 1.4-8.2 5.8-8.6 10.2H3c-0.3 0-0.7 0.2-0.9 0.5s-0.2 0.7 0 1c1.4 2.9 4.3 4.6 7.4 4.6h13.1c3.1 0 6-1.7 7.4-4.6 0.2-0.3 0.2-0.6 0.1-0.9zM13.3 11.7c1.7-0.5 3.6-0.5 5.3 0 3.7 1.1 6.8 4.7 7.3 8.3H6.1c0.5-3.6 3.5-7.1 7.2-8.3zM22.5 24H9.5c-1.8 0-3.4-0.7-4.6-2h22.2c-1.2 1.3-2.8 2-4.6 2z"/>
+                  </g>
+                  </svg>
+                Menu
+              </router-link>
+            </div> -->
+            <!-- end Chatbot -->
+      
+
+
             <!-- start Chatbot -->
             <div :class="{ 'hidden': !showSide }" class="sidebar">
               <router-link to="/chatbot" @click="handleNavClick" class="inline-flex relative items-center py-[10px] px-[10px] w-full lg:text-md md:text-base sm:text-xs font-medium rounded-md border-gray-200 hover:bg-gray-200 hover:text-gray-800 transition duration-400 ease-in-out" exact-active-class="active-link">

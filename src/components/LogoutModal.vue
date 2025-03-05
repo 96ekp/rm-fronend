@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="show"
-    class="fixed inset-0 z-50 flex items-center justify-center  bg-opacity-75"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-opacity-75"
   >
     <div
       class="w-1/3 px-8 py-8 rounded-lg bg-gray-50 sm:px-12 sm:py-12 md:px-16 md:py-14"
@@ -29,23 +29,23 @@
         </div>
       </div>
       <h3
-        class="my-4 text-xl font-semibold text-center text-gray-700 sm:text-2xl md:text-3xl"
+        class="my-4 text-xl font-semibold text-center text-text sm:text-2xl md:text-3xl"
       >
         Confirm Logout
       </h3>
-      <p class="text-sm text-center text-gray-600 sm:text-base">
+      <p class="text-sm text-center text-text sm:text-base">
         Are you sure you want to logout?
       </p>
       <div class="flex justify-center mt-6 space-x-4 sm:mt-8 md:mt-10">
         <button
           @click="closeModal"
-          class="w-full px-3 py-2 text-sm font-medium text-center text-black bg-transparent border-2 border-gray-600 rounded-2xl hover:bg-black hover:text-white sm:px-6 sm:py-3 sm:text-base"
+          class="w-full px-3 py-2 text-sm font-medium text-center bg-transparent border-2 text-text border-text rounded-2xl hover:bg-info hover:text-white sm:px-6 sm:py-3 sm:text-base"
         >
           Cancel
         </button>
         <button
           @click="confirmLogout"
-          class="w-full px-3 py-2 text-sm font-medium text-center text-red-100 bg-red-400 border-4 border-transparent rounded-2xl hover:bg-red-500 sm:px-6 sm:py-3 sm:text-base"
+        class="w-full px-3 py-2 text-sm font-medium text-center bg-transparent border-2 text-primary border-primary rounded-2xl hover:bg-primary hover:text-white sm:px-6 sm:py-3 sm:text-base"
         >
           Logout
         </button>

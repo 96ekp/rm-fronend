@@ -57,7 +57,7 @@ onUnmounted(() => {
 #home {
   padding: 50px;
   text-align: center;
-  background-image: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Update the path to your image */
+  background-image: url('https://plus.unsplash.com/premium_photo-1670601440146-3b33dfcd7e17?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D'); /* Update the path to your image */
   background-size: cover; /* Adjust the background size as needed */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Prevent the background image from repeating */

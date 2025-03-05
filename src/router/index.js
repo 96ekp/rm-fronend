@@ -4,7 +4,7 @@ import UserLogin from '../components/UserLogin.vue';
 import SideNav from '../components/SideNav.vue';
 import HomeView from '@/views/HomeView.vue';
 import { checkLoginStatus } from '@/utils/checkLoginStatus';
-import ChatBot from '@/components/ChatAsk.vue'
+import ChatBot from '../components/ChatAsk.vue';
 
 
 
@@ -38,6 +38,7 @@ const router = createRouter({
           component: ChatBot,
           meta: { requiresAuth: true },
         },
+    
       ],
     },
   ],

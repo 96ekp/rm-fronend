@@ -92,8 +92,8 @@
     <div v-if="showSuccessModal" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-400 bg-opacity-75">
       <div class="w-1/3 px-16 bg-gray-100 rounded-lg py-14">
         <div class="flex justify-center">
-          <div class="p-6 bg-green-200 rounded-full">
-            <div class="flex items-center justify-center w-16 h-16 p-4 bg-green-500 rounded-full">
+          <div class="p-6 bg-red-200 rounded-full">
+            <div class="flex items-center justify-center w-16 h-16 p-4 rounded-full bg-primary">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
               </svg>
@@ -102,7 +102,7 @@
         </div>
         <h3 class="my-4 text-3xl font-semibold text-center text-gray-700">Success</h3>
         <p class="text-center text-gray-700">You have successfully logged in.</p>
-        <button @click="redirectToHome" class="flex items-center justify-center w-full px-6 py-3 mx-auto mt-20 text-lg text-center text-white bg-emerald-400 hover:bg-emerald-500 rounded-2xl">Continuous</button>
+        <button @click="redirectToHome" class="flex items-center justify-center w-full px-6 py-3 mx-auto mt-20 text-lg text-center text-white bg-primary rounded-2xl">Continuous</button>
       </div>
     </div>
     <!-- Success Modal End -->
@@ -241,7 +241,7 @@ body {
 /* Success Modal Styles */
 
 :root {
-  --cyan: #059669;
+  --cyan: #f50057;
   --dark: #FFFFFF;
   --borderW: 2px;
 }
@@ -253,7 +253,7 @@ body {
 
 .blob-btn {
   --numOfBlobs: 4;
-  --cyan: #059669;
+  --cyan: #f50057;
   --dark: #FFFFFF;
   --borderW: 2px;
   z-index: 1;
