@@ -1,4 +1,3 @@
-
 <template>
   <div class="flex w-screen h-screen">
     <!-- Side bar -->
@@ -6,7 +5,7 @@
       <div class="h-[50px] bg-primary flex justify-start items-center">
         <div class="px-[20px]">
           <router-link to="/home" class="text-xl font-bold">
-            ApartEase
+            RM
           </router-link>
         </div>
       </div>
@@ -15,6 +14,7 @@
         <div class="flex flex-col justify-between h-full px-[20px] space-y-[20px]">
           <!--Side nav-->
           <div class="flex flex-col justify-between space-y-[20px]" >
+
             <!-- start Home -->
             <div :class="{ 'hidden': !showSide }" class="sidebar">
               <router-link to="/home" @click="handleNavClick" class="inline-flex relative items-center py-[10px] px-[10px] w-full lg:text-md md:text-base sm:text-xs font-medium rounded-md border-gray-200 hover:bg-gray-200 hover:text-gray-800 transition duration-400 ease-in-out" exact-active-class="active-link">
@@ -26,42 +26,18 @@
               </router-link>
             </div>
             <!-- end home-->
-   
-               <!-- start Restaurant Management Dropdown-->
 
-              <div :class="{'active-link': restaurantManagement}" class="relative rounded-md" @mouseover="showBillManagementDropdown = true" @mouseleave="showBillManagementDropdown = false">
-                <div class="inline-flex relative items-center py-[10px] lg:text-md md:text-base sm:text-xs px-[10px] w-full text-sm font-medium rounded-md border-gray-200 hover:bg-gray-200 hover:text-gray-800 transition duration-400 ease-in-out cursor-pointer">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
-                    </svg>
-                  Restaurant
-                  <svg v-if="showBillManagementDropdown" class="w-6 h-6 mt-0 ml-auto rotate-180 rounded-md tansform ttransition-transform lg:text-md md:text-base sm:text-xs" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 011.414 1.414l-4 4a1 1 01-1.414 0l-4-4a1 1 010-1.414z" clip-rule="evenodd"></path>
-                  </svg>
-                  
-                  <svg v-else class="w-6 h-6 ml-auto transition-transform transform rotate-0 rounded-md" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 011.414 1.414l-4 4a1 1 01-1.414 0l-4-4a1 1 010-1.414z" clip-rule="evenodd"></path>
-                  </svg>
-         
-                </div>
-                <transition name="fade">
-                  <div v-show="showBillManagementDropdown" class="absolute left-0 z-10 w-full mt-1 bg-white border border-gray-200 rounded-md shadow-lg">
-                    <router-link to="/send-bill" @click="handleNavClick" class="flex items-center block px-4 py-2 font-medium text-gray-700 rounded-md lg:text-md md:text-base sm:text-xs hover:bg-gray-100 " exact-active-class="active-link">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
-                    </svg>
-                      <span>Menu</span>
-                    </router-link>
-                    <router-link to="/bill-history" @click="handleNavClick" class="flex items-center block px-4 py-2 text-sm font-medium text-gray-700 rounded-md lg:text-md md:text-base sm:text-xs hover:bg-gray-100 " exact-active-class="active-link">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="flex-shrink-0 w-6 h-6 mr-2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <span>Chat History</span>
-                    </router-link>
-                  </div>                
-                </transition>
-              </div>
-            <!-- End Restaurant Management Dropdown -->
+            <!-- start Chatbot -->
+            <div :class="{ 'hidden': !showSide }" class="sidebar">
+              <router-link to="/chatbot" @click="handleNavClick" class="inline-flex relative items-center py-[10px] px-[10px] w-full lg:text-md md:text-base sm:text-xs font-medium rounded-md border-gray-200 hover:bg-gray-200 hover:text-gray-800 transition duration-400 ease-in-out" exact-active-class="active-link">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M2.25 15c0 .966.784 1.75 1.75 1.75h3.75l3.75 3.75v-3.75h3.75c.966 0 1.75-.784 1.75-1.75V5.75c0-.966-.784-1.75-1.75-1.75H4c-.966 0-1.75.784-1.75 1.75v9.25z" />
+                </svg>
+                Chatbot
+              </router-link>
+            </div>
+            <!-- end Chatbot -->
           </div>
 
           <div class="h-[50px]">
@@ -93,7 +69,7 @@
       </div>
 
       <div class="h-[calc(100vh-50px)] bg-gray-50 p-[20px]">
-        <div class="border border-gray-300 rounded-md p-[20px] h-full">
+        <div class="border rounded-md p-[20px] h-full">
           <!-- Success message -->
           <div v-if="showSuccessMessage" class="relative px-4 py-3 text-green-700 bg-green-100 border border-green-400 rounded" role="alert">
             <strong class="font-bold">Success!</strong>
@@ -112,6 +88,7 @@ import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 import { useStore } from "vuex";
 import { useRouter, useRoute } from "vue-router";
 import LogoutModal from '../components/LogoutModal.vue'
+import ChatBot from '../components/ChatBot.vue'
 
 const store = useStore();
 const router = useRouter();
@@ -122,14 +99,8 @@ const role = computed(() => store.getters.getRole);
 const showDropDown = ref(false);
 const showSide = ref(true);
 const showSuccessMessage = ref(false);
-const showUserManagementDropdown = ref(false);
 const showLogoutConfirm = ref(false)
-// breadcrumbs
-const breadcrumb = ref(["Home"]);
-const showBillManagementDropdown = ref(false);
-
-
-
+const restaurantManagementDropdown = ref(false);
 
 const restaurantManagement = computed(() => {
   return route.path === '/menu' || route.path === '/chat-history';
@@ -143,7 +114,6 @@ const toggleSideBar = () => {
 // Handle window resize to auto-show/hide sidebar
 const handleResize = () => {
   showSide.value = window.innerWidth >= 992;
-  
 };
 
 const logout = () => {
@@ -169,7 +139,6 @@ const navigateTo = (page) => {
   }
 };
 
-
 onMounted(() => {
   window.addEventListener("resize", handleResize);
   handleResize(); // Check initial size
@@ -188,17 +157,12 @@ const toggleUserManagementDropdown = () => {
   showUserManagementDropdown.value = !showUserManagementDropdown.value;
 };
 
-
-
 const handleNavClick = () => {
   if (window.innerWidth < 992) {
     showSide.value = false;
   }
 };
 </script>
-<style>
-/* ... (styles remain the same) ... */
-</style>
 
 <style>
 /* Add your styles here */
@@ -277,6 +241,4 @@ const handleNavClick = () => {
     width: 14%;
   }
 }
-
-
 </style>

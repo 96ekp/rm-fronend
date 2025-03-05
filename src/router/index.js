@@ -4,6 +4,7 @@ import UserLogin from '../components/UserLogin.vue';
 import SideNav from '../components/SideNav.vue';
 import HomeView from '@/views/HomeView.vue';
 import { checkLoginStatus } from '@/utils/checkLoginStatus';
+import ChatBot from '@/components/ChatAsk.vue'
 
 
 
@@ -31,6 +32,12 @@ const router = createRouter({
           component: HomeView,
           meta: { requiresAuth: true},
         },
+        {
+          path: '/chatbot',
+          name: 'ChatBot',
+          component: ChatBot,
+          meta: { requiresAuth: true },
+        },
       ],
     },
   ],
@@ -44,14 +51,12 @@ router.beforeEach((to, from, next) => {
   const roles = to.meta.roles;
 
   if (requiresAuth && !token) {
-    next({ name: 'login' }); // Redirect to login if not authenticated
+    next({ name: 'login' });
   } else if (requiresAuth && roles && !roles.includes(userRole)) {
-    // next({ name: 'login' }); // Redirect to home if not authorized
-    next(false); // Prevent navigation if user does not have the required role
+    next(false);
   } else {
-    next(); // Proceed to the route
+    next();
   }
-  next();
 });
 
 
