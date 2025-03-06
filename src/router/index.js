@@ -5,6 +5,8 @@ import SideNav from '../components/SideNav.vue';
 import HomeView from '@/views/HomeView.vue';
 import { checkLoginStatus } from '@/utils/checkLoginStatus';
 import ChatBot from '../components/ChatAsk.vue';
+import Menu from '../components/Menu.vue';
+
 
 
 
@@ -36,6 +38,12 @@ const router = createRouter({
           path: '/chatbot',
           name: 'ChatBot',
           component: ChatBot,
+          meta: { requiresAuth: true },
+        },
+        {
+          path: '/menu',
+          name: 'Menu',
+          component: Menu,
           meta: { requiresAuth: true },
         },
     
