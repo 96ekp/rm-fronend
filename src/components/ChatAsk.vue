@@ -17,9 +17,9 @@
     <!-- Chat Messages -->
     <div class="overflow-y-auto p-3 space-y-4">
       <div v-for="(msg, idx) in messages" :key="idx" class="flex items-end" :class="{'justify-end': msg.sender !== 'AI'}">
-        <div class="flex flex-col space-y-2 text-base leading-tight max-w-lg mx-2" :class="msg.sender === 'AI' ? 'order-2 items-start' : 'order-1 items-end'">
+        <div class="flex flex-col space-y-2 text-basey leading-tight max-w-lg mx-2" :class="msg.sender === 'AI' ? 'order-2 items-start' : 'order-1 items-end'">
           <div>
-            <span class="px-4 py-3 rounded-xl inline-block" :class="msg.sender === 'AI' ? 'rounded-bl-none bg-gray-100 text-gray-600' : 'rounded-br-none bg-blue-500 text-white'">{{ msg.text }}</span>
+            <span class="px-4 py-3 rounded-xl inline-block" :class="msg.sender === 'AI' ? 'rounded-bl-none bg-gray-100 text-text' : 'rounded-br-none bg-primary text-white'">{{ msg.text }}</span>
           </div>
         </div>
         <img :src="msg.sender === 'AI' ? 'https://cdn-icons-png.flaticon.com/512/4712/4712027.png' : 'https://i.pravatar.cc/100?img=7'" alt="" class="w-6 h-6 rounded-full" :class="msg.sender === 'AI' ? 'order-1' : 'order-2'">
@@ -38,10 +38,10 @@
             v-model="userMessage"
             type="text"
             placeholder="Ask me anything about your projects"
-            class="text-base w-full focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-5 pr-16 bg-gray-100 border-2 border-gray-200 focus:border-blue-500 rounded-full py-2"
+            class="text-base w-full focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-5 pr-16 bg-gray-100 border-2 border-gray-200 focus:border-info rounded-full py-2"
         />
         <div class="absolute right-2 inset-y-0 flex items-center">
-          <button type="submit" class="inline-flex items-center justify-center rounded-full h-8 w-8 transition duration-200 ease-in-out text-white bg-blue-500 hover:bg-blue-600 focus:outline-none">
+          <button type="submit" class="inline-flex items-center justify-center rounded-full h-8 w-8 transition duration-200 ease-in-out text-white bg-info hover:bg-primary focus:outline-none">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l7-7-7-7M5 12h14"></path>
             </svg>

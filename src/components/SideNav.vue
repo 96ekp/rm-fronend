@@ -2,7 +2,7 @@
   <div class="flex min-h-screen">
     <!-- Sidebar -->
     <aside
-        class="fixed left-0 z-40 w-64 h-screen transition-transform bg-gray-50 border-r border-gray-200"
+        class="fixed left-0 z-40 w-64 h-screen transition-transform bg-bg border-r border-gray-200"
         :class="{ '-translate-x-full': !showSide, 'translate-x-0': showSide }"
         aria-label="Sidebar"
     >
@@ -10,7 +10,9 @@
         <!-- Logo Section -->
         <div class="pb-4 mb-4 border-b border-gray-200">
           <router-link to="/home" class="flex items-center ps-2.5">
-            <span class="self-center text-xl font-semibold whitespace-nowrap">RM</span>
+           <span class="self-center text-xl font-semibold whitespace-nowrap text-primary">
+  RM
+</span>
           </router-link>
         </div>
 
@@ -20,8 +22,8 @@
             <router-link
                 to="/home"
                 @click="handleNavClick"
-                class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
-                exact-active-class="bg-blue-100 text-blue-700"
+                class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-red-100 group"
+                exact-active-class="bg-red-100 text-primary"
             >
               <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -45,8 +47,8 @@
             <router-link
                 to="/chatbot"
                 @click="handleNavClick"
-                class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
-                exact-active-class="bg-blue-100 text-blue-700"
+                class="flex items-center p-2 text-text rounded-lg hover:bg-red-100 group"
+                exact-active-class="bg-red-100 text-primary"
             >
               <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -70,8 +72,8 @@
             <router-link
                 to="/menu"
                 @click="handleNavClick"
-                class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
-                exact-active-class="bg-blue-100 text-blue-700"
+                class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-red-100 group"
+                exact-active-class="bg-red-100 text-primary"
             >
               <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +99,7 @@
           <li>
             <button
                 @click="showLogoutConfirm = true"
-                class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 group"
+                class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg hover:bg-red-100 group"
             >
               <svg
                   xmlns="http://www.w3.org/2000/svg"

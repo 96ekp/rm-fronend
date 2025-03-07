@@ -22,7 +22,7 @@
             v-model="user.username"
             type="text"
             name="username"
-            class="block w-full px-3 py-3 mt-1 bg-white border shadow-sm rounded-2xl lg:text-lg border-slate-300 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
+            class="block w-full px-3 py-3 mt-1 bg-white border shadow-sm rounded-2xl lg:text-lg border-slate-300 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-info disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
            
             placeholder="Username"
           />
@@ -37,7 +37,7 @@
               v-model="user.password"
               :type="passwordVisible ? 'text' : 'password'"
               name="password"
-              class="block w-full px-3 py-3 pr-10 mt-1 bg-white border shadow-sm rounded-2xl lg:text-lg border-slate-300 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
+              class="block w-full px-3 py-3 pr-10 mt-1 bg-white border shadow-sm rounded-2xl lg:text-lg border-slate-300 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-info disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
               placeholder="Password"
             />
             <button
