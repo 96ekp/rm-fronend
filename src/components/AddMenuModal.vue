@@ -1,3 +1,4 @@
+<!-- AddMenuModal.vue -->
 <template>
   <div v-if="showModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
@@ -14,18 +15,11 @@
           />
         </div>
         <div class="mb-4">
-          <label for="menuImage" class="block text-sm font-medium text-gray-700">Upload Image</label>
-          <input
-              @change="handleImageUpload"
-              type="file"
-              id="menuImage"
-              class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-red-50 file:text-primary hover:file:bg-red-100"
-              accept="image/*"
-              required
-          />
-          <div v-if="imagePreview" class="mt-4">
-            <img :src="imagePreview" alt="Image Preview" class="w-full h-48 object-cover rounded-md" />
-          </div>
+          <label for="imageUrl">Image URL</label>
+          <input v-model="imageUrl" type="url" id="imageUrl" placeholder="https://example.com/image.jpg" required />
+        </div>
+        <div v-if="imageUrl" class="mt-4">
+          <img :src="imageUrl" alt="Image Preview" class="w-full h-48 object-cover" />
         </div>
         <div class="flex justify-end">
           <button type="button" @click="closeModal" class="mr-2 px-4 py-2 bg-info text-white rounded-md hover:bg-text">Cancel</button>
@@ -42,43 +36,50 @@ import apiClient from '@/services/AxiosClient.js';
 
 const props = defineProps({
   showModal: Boolean,
-  closeModal: Function
+  closeModal: {
+    type: Function,
+    required: true
+  }
 });
 
 const menuName = ref('');
-const menuImage = ref(null);
-const imagePreview = ref(null);
-
-const handleImageUpload = (event) => {
-  const file = event.target.files[0];
-  if (file) {
-    menuImage.value = file;
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      imagePreview.value = e.target.result;
-    };
-    reader.readAsDataURL(file);
-  }
-};
+const imageUrl = ref('');
 
 const handleSubmit = async () => {
   const data = {
     menu_name: menuName.value,
-    imageUrl: imagePreview.value
+    imageUrl: imageUrl.value
   };
+
+  const isValidUrl = (url) => {
+    try {
+      new URL(url);
+      return true;
+    } catch (_) {
+      return false;
+    }
+  };
+
+  if (!isValidUrl(imageUrl.value)) {
+    console.error('Invalid image URL');
+    return;
+  }
 
   try {
     const token = localStorage.getItem('token');
-    const response = await apiClient.post('/api/v1/menus', data, {
+    if (!token) {
+      throw new Error('No token found');
+    }
+    await apiClient.post('/api/v1/menus', JSON.stringify(data), {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
       }
     });
-    console.log(response.data);
     closeModal();
+    window.location.href = '/menu'; // Redirect to Menu page
   } catch (error) {
-    console.error('Failed to add menu:', error);
+    console.error('Failed to add menu:', error.response ? error.response.data : error.message);
   }
 };
 </script>
